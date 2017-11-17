@@ -33,15 +33,15 @@ postSchema.virtual('updatedTime').get(function() {
 });
 
 // function
-function getDate(dateObject) {
-    if(dateObject instanceof Date)
+function getDate(dateObj) {
+    if(dateObj instanceof Date)
     {
-        return dateObject.getFullYear() + "-" + get2digits(dateObject.getMonth() + 1) + '-' + get2digits(dateObject.getDate());
+        return dateObj.getFullYear() + "-" + get2digits(dateObj.getMonth() + 1) + '-' + get2digits(dateObj.getDate());
     }
 };
 
 function getTime(dateObj) {
-    if(dateObject instanceof Date)
+    if(dateObj instanceof Date)
     {
         return get2digits(dateObj.getHours()) + ':' + get2digits(dateObj.getMinutes()) + ':' + get2digits(dateObj.getSeconds());
     }
@@ -50,3 +50,7 @@ function getTime(dateObj) {
 function get2digits(num) {
     return ('0' + num).slice(-2);
 };
+
+var Post = mongoose.model("board", postSchema);
+
+module.exports = Post;

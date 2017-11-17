@@ -1,3 +1,5 @@
+<!-- views/posts/index.ejs -->
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,7 +8,7 @@
     <body>
         <% include ../partials/nav %>
         <div class="container post post-index">
-            <% include ./partials/header %>
+            <% include ../partials/header %>
             
             <div class="buttons">
                 <a class="btn btn-default" href="/posts/new">New</a>
@@ -25,7 +27,7 @@
                             <td class="noData" colspan=100> There is no data to show :( </td>
                         </tr>
                     <% } %>
-                    <% posts.foreach(function(post) { %>
+                    <% posts.forEach(function(post) { %>
                         <tr>
                             <td class="title">
                                 <a href="/posts/<%=post._id%>"><div><%= post.title %></div></a>
